@@ -1,11 +1,11 @@
 import socket
 
-socks = socket.socket() #создание пременной типа сокет
-socks.bind(('', 9090)) #занимает определённый адрес и порт 9090
-socks.listen(1) #сколько подключений может быть одновременно
+socks = socket.socket() 
+socks.bind(('', 9090)) 
+socks.listen(1) 
 rez = 'Поступившего сообщения не было'
 vir1 = ' '
-conn, addr = socks.accept() #создает подключение и называет conn, localhost - addr
+conn, addr = socks.accept() 
 
 print('connected:', addr)
 
