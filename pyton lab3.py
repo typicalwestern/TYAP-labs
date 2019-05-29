@@ -13,9 +13,11 @@ def resh(vibor):
                 print(i[0],i[1],i[2],i[3])
 
     if vibor == 3:
-        minus = int(input('на какое число вы желаете уменьшить количество товара? '))
+        number = input("Укажите номера товаров, у которых нужно уменьшить цену через пробел : ").split()
+        minus = int(input('На сколько вы желаете уменьшить цену товара? '))
         for i in ok:
-            i[3] = int(i[3]) - minus
+            if i[0] in number:
+                i[2] = int(i[2]) - minus
             print(i[0],i[1],i[2],i[3])
 
     if vibor == 4:
@@ -48,9 +50,11 @@ if vibor == 1 or vibor == 2 or vibor == 3 or vibor == 4:
         prov = input('Данный ответ некооректный/ Введите ответ еще раз. ')
     while prov == 'yes' or prov == 'Y' or prov == '1':
         vibor = int(input("Введите желаемый номер задания: "))
+        while prov != 'yes' and prov != 'Y' and prov != '1' and prov != 'no' and prov != 'N' and prov != '0':
+            prov = input('Данный ответ некооректный/ Введите ответ еще раз. ')
         while vibor != 1 and vibor != 2 and vibor != 3 and vibor != 4:
             vibor = int(input("Введите номер варианта повторно: "))
-            resh(vibor)
+        resh(vibor)
         prov = input('Хотите продолжить? Введите yes, Y, 1 или no, N, 0: ')
     if prov == 'no' or prov == 'N' or prov == '0':
         exit()
